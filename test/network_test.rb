@@ -81,7 +81,7 @@ class NetworkTest < Minitest::Test
     nbc.add_show(knight_rider)
     nbc.add_show(parks_and_rec)
 
-    assert_equal ["Amy Poehler", "Nick Offerman"], nbc.actors_in_specific_show(parks_and_rec)  
+    assert_equal ["Amy Poehler", "Nick Offerman"], nbc.actors_in_specific_show(parks_and_rec)
   end
 
   def test_list_actors_by_show
@@ -95,7 +95,7 @@ class NetworkTest < Minitest::Test
     nbc = Network.new("NBC")
     nbc.add_show(knight_rider)
     nbc.add_show(parks_and_rec)
-    expected = {knight_rider => [David Hasselhoff", "William Daniels"], parks_and_rec => ["Amy Poehler", "Nick Offerman"]}
+    expected = {knight_rider => ["David Hasselhoff", "William Daniels"], parks_and_rec => ["Amy Poehler", "Nick Offerman"]}
 
     assert_equal expected, nbc.actors_by_show
   end

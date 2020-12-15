@@ -34,5 +34,22 @@ class Network
     mc_array
   end
 
+  def actors_in_specific_show(show)
+    actors = []
+      show.characters.each do |character|
+        actors << character.actor
+      end
+    actors
+  end
+
+  def actors_by_show
+    actors_show = Hash.new(0)
+    shows.each do |show|
+      actors_show[show] = actors_in_specific_show(show)
+    end
+    actors_show
+  end
+
+
 
 end
