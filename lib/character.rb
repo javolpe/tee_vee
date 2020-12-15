@@ -1,7 +1,7 @@
 class Character
-attr_reader :name,
-            :actor,
-            :salary
+  attr_reader :name,
+              :actor,
+              :salary
 
   def initialize(hash)
     @name   = hash[:name]
