@@ -114,9 +114,11 @@ class NetworkTest < Minitest::Test
     nbc.add_show(baywatch)
     nbc.add_show(parks_and_rec)
     expected = ["David Hasselhoff", "William Daniels", "Amy Poehler", "Nick Offerman"]
-
-    assert_equal expected, nbc.shows_by_actor
+binding.pry
+    assert_equal expected, nbc.unique_actors
   end
+
+
 
   def test_shows_by_actor
     nbc = Network.new("NBC")

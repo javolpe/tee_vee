@@ -50,6 +50,39 @@ class Network
     actors_show
   end
 
+  def unique_actors
+    actors = []
+      shows.each do |show|
+        show.characters.each do |character|
+          actors << character.actor
+      end
+    end
+    actors.uniq
+  end
+
+  def all_actors_in_show(test_show)
+    show_array = Array.new
+    shows.each do |show|
+      show.characters.each do |characters|
+        if show == test_show
+          show_array << characters.actor
+        end
+      end
+    end
+    show_array
+  end
+
+  def shows_by_actor
+    final_hash = {}
+    shows.each do |show|
+      unique_actors.each do |actor|
+        if all_actors_in_show(show).include?(actor)
+          final_hash[actor] = show
+        end
+      end
+    end
+  end
+
 
 
 end
